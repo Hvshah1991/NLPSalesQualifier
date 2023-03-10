@@ -127,7 +127,8 @@ def main():
                 
         with st.expander("Prediction Distribution"):
             fig2 = plt.figure()
-            sns.countplot(x='probability',data=new_df)
+            ax = sns.countplot(y='probability',data=new_df)
+            ax.bar_label(ax.containers[0],label_type='edge')
             st.pyplot(fig2)
     #Web Scraper
     elif choice == "Web Scraper":
